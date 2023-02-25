@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profit Calculator</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Profit Calculator</h1>
+		<form>
+			<div class="form-group">
+				<label for="revenue">Revenue:</label>
+				<input type="number" class="form-control" id="revenue">
+			</div>
+			<div class="form-group">
+				<label for="cost">Cost:</label>
+				<input type="number" class="form-control" id="cost">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
+			<button type="reset" class="btn btn-default">Clear</button>
+			<div class="form-group">
+				<label for="profit">Profit:</label>
+				<input type="number" class="form-control" id="profit" readonly>
+			</div>
+		</form>
+	</div>
+
+	<!-- Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script>
+		function calculate() {
+			// Get input values
+			var revenue = parseFloat(document.getElementById("revenue").value);
+			var cost = parseFloat(document.getElementById("cost").value);
+
+			// Calculate profit
+			var profit = revenue - cost;
+
+			// Display result
+			document.getElementById("profit").value = profit;
+		}
+	</script>
+</body>
+</html>
