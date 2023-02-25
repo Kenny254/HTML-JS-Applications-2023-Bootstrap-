@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate Age</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-0Y9RiC0TAsSC+NJq3s4sMYf2Gmv28LJhGVbFfvZtMg56XhJ+tOkg+pVtOru8GBPHIWV7BcJhHkE7tdZm8PZ7lQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div class="container mt-5">
+		<h1>Calculate Age</h1>
+		<form>
+			<div class="mb-3">
+				<label for="dob" class="form-label">Date of Birth</label>
+				<input type="date" class="form-control" id="dob" name="dob">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calculateAge()">Calculate</button>
+			<div class="mt-3">
+				<p>Your age is: <span id="age"></span></p>
+			</div>
+		</form>
+	</div>
+	
+	<!-- Bootstrap JavaScript and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	<script>
+		function calculateAge() {
+			// Get the date of birth from the input field
+			const dob = new Date(document.getElementById("dob").value);
+			
+			// Calculate the difference between the birth date and today's date
+			const diffInMs = Date.now() - dob.getTime();
+			const ageDate = new Date(diffInMs);
+			const year = ageDate.getUTCFullYear();
+			const age = Math.abs(year - 1970);
+			
+			// Display the age on the page
+			document.getElementById("age").textContent = age;
+		}
+	</script>
+</body>
+</html>
