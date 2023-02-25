@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate Tank Volume</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-0Y9RiC0TAsSC+NJq3s4sMYf2Gmv28LJhGVbFfvZtMg56XhJ+tOkg+pVtOru8GBPHIWV7BcJhHkE7tdZm8PZ7lQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div class="container mt-5">
+		<h1>Calculate Tank Volume</h1>
+		<form>
+			<div class="mb-3">
+				<label for="radius" class="form-label">Tank Radius (in meters)</label>
+				<input type="number" class="form-control" id="radius" name="radius">
+			</div>
+			<div class="mb-3">
+				<label for="height" class="form-label">Tank Height (in meters)</label>
+				<input type="number" class="form-control" id="height" name="height">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calculateVolume()">Calculate</button>
+			<div class="mt-3">
+				<p>The volume of the tank is: <span id="volume"></span> cubic meters.</p>
+			</div>
+		</form>
+	</div>
+	
+	<!-- Bootstrap JavaScript and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+	<script>
+		function calculateVolume() {
+			// Get the radius and height from the input fields
+			const radius = Number(document.getElementById("radius").value);
+			const height = Number(document.getElementById("height").value);
+			
+			// Calculate the volume of the tank
+			const volume = Math.PI * Math.pow(radius, 2) * height;
+			
+			// Display the volume on the page
+			document.getElementById("volume").textContent = volume.toFixed(2);
+		}
+	</script>
+</body>
+</html>
