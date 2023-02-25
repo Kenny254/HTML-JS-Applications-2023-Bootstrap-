@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area of a Square Calculator</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Area of a Square Calculator</h1>
+		<form>
+			<div class="form-group">
+				<label for="side">Side length:</label>
+				<input type="number" class="form-control" id="side">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
+			<button type="reset" class="btn btn-default">Clear</button>
+			<div class="form-group">
+				<label for="result">Result:</label>
+				<input type="number" class="form-control" id="result" readonly>
+			</div>
+		</form>
+	</div>
+
+	<!-- Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script>
+		function calculate() {
+			// Get input value
+			var side = parseFloat(document.getElementById("side").value);
+
+			// Calculate area
+			var area = Math.pow(side, 2);
+
+			// Display result
+			document.getElementById("result").value = area;
+		}
+	</script>
+</body>
+</html>
